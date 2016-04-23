@@ -1,1 +1,5 @@
-<%= @shout.body %>
+<% if @shout.content.is_a?(PhotoShout) && @shout.content.image.present? %>
+  <%= image_tag @shout.content.image.url(:shout) %>
+<% else %>
+   <%= render @shout.content %>
+<% end %>
