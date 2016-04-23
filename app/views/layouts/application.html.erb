@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="">
+    <div class="user-sign-in">
       <% if signed_in? %>
         <%= link_to current_user.username, dashboard_path %>
         <%= link_to 'Sign out', session_path, method: :delete %>
@@ -18,7 +18,7 @@
   </div>
 
   <% if alert %>
-    <p><%=  %></p>
+    <p><%= alert %></p>
   <% end %>
 
   <%= yield %>
