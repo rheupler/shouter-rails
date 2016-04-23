@@ -1,10 +1,13 @@
 <%= div_for shout do %>
+  <%= gravatar shout.user %>
   <%= link_to shout.user.username, shout.user %>
   shouted
-  <% if shout.content.is_a?(PhotoShout) && shout.content.image.present? %>
-    <%= image_tag shout.content.image.url(:shout) %>
-  <% else %>
-     <%= render shout.content %>
-  <% end %>
+  <div class="">
+    <% if shout.content.is_a?(PhotoShout) && shout.content.image.present? %>
+      <%= image_tag shout.content.image.url(:shout) %>
+    <% else %>
+        <%= render shout.content %>
+    <% end %>
+  </div>
   <%= link_to time_ago_in_words(shout.created_at), shout %>
 <% end %>
