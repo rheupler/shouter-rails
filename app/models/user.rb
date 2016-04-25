@@ -15,4 +15,6 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: true
   has_many :shouts
+  has_many :follow_relationships
+  has_many :followed_users, through: :follow_relationships
 end
